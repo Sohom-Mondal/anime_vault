@@ -1,5 +1,9 @@
-import { Card, CardBody, CardFooter, Image } from "@nextui-org/react";
-import { Chip } from "@nextui-org/react";
+import { Card, CardContent, CardTitle } from "@/components/ui/card";
+
+import { Badge } from "@/components/ui/badge";
+import { SquareStack, Star } from "lucide-react";
+
+import Image from "next/image";
 
 export interface AnimeProp {
   id: string;
@@ -20,53 +24,29 @@ interface Prop {
 
 function AnimeCard({ anime }: Prop) {
   return (
-    <Card isFooterBlurred isPressable className="shadow-2xl shadow-red-800">
-      <CardBody className="overflow-visible p-0">
+    <Card className="max-w-sm rounded-lg relative w-full">
+      <div className="relative w-full h-[37vh] overflow-hidden">
         <Image
-          isZoomed
-          shadow="sm"
-          radius="lg"
-          width="100%"
-          alt={anime.name}
-          className="w-full object-cover h-96"
           src={`https://shikimori.one${anime.image.original}`}
+          alt={anime.name}
+          fill
+          className="rounded-t-lg hover:brightness-75 duration-200 delay-75"
         />
-      </CardBody>
-      <CardFooter className="flex flex-col gap-4">
-        <b className="text-lg font-bold">{anime.name}</b>
-        <div className="flex gap-6">
-          <Chip className="capitalize">{anime.kind}</Chip>
-          <Chip
-            startContent={
-              <Image
-                src="/episodes.svg"
-                alt=""
-                width={20}
-                height={20}
-                className="object-contain"
-              />
-            }
-            variant="bordered"
-          >
+      </div>
+      <CardContent className="pt-2 flex flex-col gap-3">
+        <CardTitle className="line-clamp-1 text-center">{anime.name}</CardTitle>
+        <div className="flex justify-center gap-4 items-center">
+          <Badge className="capitalize">{anime.kind}</Badge>
+          <Badge>
+            <SquareStack className="h-4 w-4 mr-2" />
             {anime.episodes || anime.episodes_aired}
-          </Chip>
-          <Chip
-            startContent={
-              <Image
-                src="./star.svg"
-                alt="star"
-                width={18}
-                height={18}
-                className="object-contain"
-              />
-            }
-            variant="faded"
-            className="font-bold text-yellow-500"
-          >
+          </Badge>
+          <Badge>
+            <Star className="h-4 w-4 mr-2" />
             {anime.score}
-          </Chip>
+          </Badge>
         </div>
-      </CardFooter>
+      </CardContent>
     </Card>
   );
 }

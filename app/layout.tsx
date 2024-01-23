@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
-
+import "./globals.css";
+import { Inter as FontSans } from "next/font/google";
+import { cn } from "@/lib/utils";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 
-import "./globals.css";
-import { Providers } from "./providers";
-
-const dmSans = DM_Sans({ subsets: ["latin"] });
+export const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
   title: "Anime Vault",
@@ -20,13 +21,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
-      <body className={dmSans.className}>
-        <Providers>
-          <Hero />
-          {children}
-          <Footer />
-        </Providers>
+    <html lang="en">
+      <body
+        className={cn(
+          "min-h-screen bg-[#000002] font-sans antialiased",
+          fontSans.variable
+        )}
+      >
+        <Hero />
+        {children}
+        <Footer />
       </body>
     </html>
   );
