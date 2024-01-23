@@ -1,14 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Inter as FontSans } from "next/font/google";
-import { cn } from "@/lib/utils";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
-
-export const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
 
 export const metadata: Metadata = {
   title: "Anime Vault",
@@ -22,12 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={cn(
-          "min-h-screen bg-[#000002] font-sans antialiased",
-          fontSans.variable
-        )}
-      >
+      <body className="min-h-screen bg-[#000002]">
         <Hero />
         {children}
         <Footer />
