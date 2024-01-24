@@ -1,43 +1,15 @@
 
-# Anime Vault
+<h1 align="center">Anime Vault</h1>
 
 A modern Next 14 Server Side App with Server Actions, Infinite Scroll & NextUI components.
+![all-devices-black](https://github.com/sohomofficial/anime-vault/assets/93909798/9a5e4a6a-46d3-4471-ad96-3a093e00f9e3)
 
+## Features
 
-## Tech Stack
-
-**Client:** Next.js, NextUI, TailwinCSS
-
-**Deployment:** Vercel
-
-
-## Run Locally
-
-Clone the project
-
-```bash
-  git clone https://github.com/Sohom-Mondal/anime_vault.git
-```
-
-Go to the project directory
-
-```bash
-  cd anime_vault
-```
-
-Install dependencies
-
-```bash
-  npm install
-```
-
-Start the server
-
-```bash
-  npm run dev
-```
-
+- Infinite Scrolling
+- SSR
+- Simple & optimised UI
+- Responsiveness
 
 ## Credits
-
-JavaScript Mastery
+[Build Modern Next 14 Server Side App with Server Actions, Infinite Scroll & Framer Motion Animations](https://youtu.be/FKZAXFjxlJI?si=dLmQjijMg7cutj4I) by [JavaScript Mastery](https://youtube.com/@javascriptmastery?si=D4SxdxdFX7d8cYR0).
